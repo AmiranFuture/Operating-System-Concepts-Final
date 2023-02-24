@@ -1,0 +1,12 @@
+Task 1: Add new user
+1) Firstly log in as a root using command: sudo su
+
+2) Then add user using command: adduser student
+
+3) make up a password to user: password: student
+
+4) Then  Re-enter password: student
+
+5) Nex you need to fill all asked info  
+
+6) Then you can log in as new added user in our example “student” with your password in our example “student” 
