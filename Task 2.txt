@@ -1,0 +1,51 @@
+Task 2: use 3 methods connection to ethernet
+
+NAT connection:
+1)In VirtualBox you need to select your virtual machine
+
+2)Then open the settings
+
+3)In the opened window on left bar select “Networks”
+
+4)Choose “Adapter 1” and make a note to the “Enable networks adapter”
+
+5)Then in the type of connection choose “NAT”
+
+6)Then click “OK” buttom and you can start your VM and ping any site from terminal
+
+
+
+
+Via proxy server connection: 
+1)Firstly you need to install squid lib using that command: sudo apt-get install squid
+
+2)Next you need open squid configuration file with nano or vim using that command: nano /etc/squid/squid.conf (it’s a address of squid.conf location)
+
+3)And in the opened txt editor you need to make changes below:
+http_port 3128 (it’s a default port)
+acl localnet src 192.168.1.2(instead of these ip you need write your network address)
+http_access allow localnet
+
+4)Then save and close the file
+
+5)Next you need to update the squid to confirm the changes with that command: 
+sudo service squid restart 
+
+6)Now we need to configure VM to use that proxy in the VM settings, open VM settings and on the left navigate bar choose “Network”, then click on 
+the Network Proxy settings and choose “Manual” and instead of given ip write there your proxy ip and port, in our example “192.168.1.2” and “3128”, then close all settings 
+
+7)Congratulations, its done. Now you can check it by open browser and it will work by your proxy
+
+
+Direct connection:
+1)	In VirtualBox you need to select your virtual machine
+
+2)	Then open the settings
+
+3)	In the opened window on left bar select “Networks”
+
+4)	Choose “Adapter 1” and make a note to the “Enable networks adapter”
+
+5)	Then in the type of connection choose “Network bridge” and choose your correct name of network
+
+6)	Then click “OK” buttom and you can start your VM and ping any site from terminal
