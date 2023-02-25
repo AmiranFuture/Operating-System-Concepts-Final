@@ -1,0 +1,10 @@
+helloworld module: 
+This is a simple module to demonstrate the implementation and removal of modules in the Linux Kernel. 
+As you can see in the screenshots, when we activate it, the message "Hello, Kernel!" appears in the Kernel Log (dmesg). 
+This means that the module has been successfully activated. To deactivate it, we write the rmmod helloworld command and again go to the 
+Kernel Log and see the farewell message "Goodbye, Kernel!"
+
+devnum module:
+When there is a device and a driver, then how to connect them together, you can do it using this module. This module creates a number 
+for a specific device in ls/dev. You can see this on the example of the test file "test.c". The screenshots show the successful launch 
+of the module and the test file, as well as the deactivation of the module and a "exit" message.
